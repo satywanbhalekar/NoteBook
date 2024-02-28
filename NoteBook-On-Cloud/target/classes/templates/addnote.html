@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>NoteBook On Cloud </title>
+</head>
+<body>
+
+
+	<section>
+		
+		<div class="container my-5 p-5" style="border:1px solid black;">
+		<h4 class="text-center">Add Book</h4>
+		<form class="col-md-4 offset-md-4" th:action="@{/user/save}" method="post">
+			<div class="mb-3">
+				<label for="name" class="form-label">Subject Name
+					</label> <input type="text" class="form-control" name="subjectname">	
+			</div>
+			
+			<div class="mb-3">
+				<label for="author" class="form-label">Write Note
+					</label> <input type="text" class="form-control" name="note">	
+			</div>
+			<div class="mb-3">
+    			<label for="date" class="form-label">Date and Time:</label>
+    			<input type="datetime-local" class="form-control" id="date" name="date">	
+			</div>
+
+			
+			<center><button type="submit" class="btn btn-primary">Submit</button></center>
+		</form>
+	</div>
+	</section>
+
+	
+
+
+	
+</body>
+</html>

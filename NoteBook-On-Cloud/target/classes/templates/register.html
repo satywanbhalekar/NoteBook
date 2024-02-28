@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+	  <script src="https://kit.fontawesome.com/0faddc1af8.js" crossorigin="anonymous"></script>
+	  
+</head>
+<body>
+	
+	<!-- start navbar -->
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand text-white" href="#">NoteBook On Cloud</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active text-white"
+						aria-current="page" href="/user/profile">Home</a></li>
+						
+						
+					<li class="nav-item"><a class="nav-link text-white"
+						href="/user/my_notes">My Notes</a></li>
+					
+							<a class="nav-link text-white" href="/user/add_note">Add Note</a>
+				</ul>
+				<div>
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+						
+						<li class="nav-item"><a class="nav-link text-white" href="/signin">Login</a></li>
+						
+						
+					
+					</ul>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</nav>
+	<!-- End Navbar -->
+	
+	
+	<section>
+		<div class="container p-3">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card">
+						<div class="card-header text-center fs-4">Register Page</div>
+
+
+						<th:block th:if="${session.msg}">
+							<p class="text-center text-success fs-4">[[${session.msg}]]</p>
+							<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+
+						</th:block>
+
+						<div class="card-body">
+							<form action="saveUser" method="post">
+								<div class="mb-3">
+									<label>Enter Full Name</label> <input type="text" name="name"
+										class="form-control">
+								</div>
+								<div class="mb-3">
+									<label>Enter Email</label> <input type="text" name="email"
+										class="form-control">
+								</div>
+
+								<div class="mb-3">
+									<label>Enter Mobile Number</label> <input type="number"
+										name="mobileNo" class="form-control">
+								</div>
+
+								<div class="mb-3">
+									<label>Enter Password</label> <input type="text"
+										name="password" class="form-control">
+								</div>
+								<button class="btn btn-primary col-md-12">Register</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+
+	</section>
+</body>
+</html>
